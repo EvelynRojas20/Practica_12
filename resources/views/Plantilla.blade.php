@@ -23,9 +23,13 @@
         <ul class="navbar-nav">
 
             <li class="nav-item">
-            <a class="nav-link {{ request()->routeIs('reg')?'text-info fst-italic fw-bold':''}}" href="{{route('reg')}}">Registro de Libros</a>
+            <a class="nav-link {{ request()->routeIs('libro.create')?'text-info fst-italic fw-bold':''}}" href="{{route('libro.create')}}">Registro de Libros</a>
             </li>
 
+            <li class="nav-item">
+            <a class="nav-link {{ request()->routeIs('cli')?'text-success fst-italic fw-bold':''}}"href="{{route('cli')}}">Clientes</a>
+            </li>
+          
         </ul>
         </div>
     </div>
@@ -35,8 +39,11 @@
     @yield('contenido')
     <!--pie de pagina-->
     <div class="alert alert-info mt-5 text-center" role="alert">
-    CopyRight 28 De Octubre del 2022
-   <br> Libreria///BURBUJAS/// </br>
+    CopyRight©℗®™ 
+    @php
+    echo date("d-m-y");
+    @endphp
+   <br> Libreria   ///BURBUJAS/// </br>
     </div>
   
 

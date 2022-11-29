@@ -16,10 +16,10 @@ class ValidadorB extends FormRequest
         return [
             'titulo'=>'required',
             'autor'=>'required',
-            'pagina'=>'int',
+            'pagina'=>'required',
             'edit'=>'required',
-            'txt'=>'int|min:13',
-            'email'=>'email',
+            'txt'=>'required',
+            'email'=>'required'
         ];
     }
 }
