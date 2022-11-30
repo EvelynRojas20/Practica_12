@@ -11,7 +11,8 @@ class ControladorLibros extends Controller
 {
     public function index()
     {
-        //
+        $tablaL = DB::table('tb_libros')->get();
+        return view('ConsultaLibros', compact('tablaL'));
     }
 
     public function create()

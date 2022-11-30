@@ -16,7 +16,7 @@ class ControladorClientes extends Controller
 
     public function create()
     {
-        //
+        return view('Clientes');
     }
 
     public function store(ValidadorCliente $request)

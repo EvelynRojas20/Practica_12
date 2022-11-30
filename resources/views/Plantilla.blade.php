@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Libros</title>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
@@ -27,7 +28,11 @@
             </li>
 
             <li class="nav-item">
-            <a class="nav-link {{ request()->routeIs('cli')?'text-success fst-italic fw-bold':''}}"href="{{route('cli')}}">Clientes</a>
+            <a class="nav-link {{ request()->routeIs('libro.index')?'text-info fst-italic fw-bold':''}}" href="{{route('libro.index')}}">Consulta de Libros</a>
+            </li>
+
+            <li class="nav-item">
+            <a class="nav-link {{ request()->routeIs('cliente.create')?'text-success fst-italic fw-bold':''}}"href="{{route('cliente.create')}}">Registro de Clientes</a>
             </li>
           
         </ul>
