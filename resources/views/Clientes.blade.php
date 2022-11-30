@@ -1,14 +1,18 @@
 @extends('Plantilla')
 
 @section('contenido')
-    @if(session('confirmacion'))
-        <div class="alert alert-secondary" role="alert">
-            Se guardo
-        </div>
+    @if(session()->has('confirmacion'))  
+      
+      {!!"<script>Swal.fire(
+        'Guardado',
+        'Cliente guardado',
+        'success'
+        )</script>"!!}
+
     @endif
 
 <div class="container">   
-<form method="post" action="LP">
+<form method="post" action="{{route('cliente.store')}}">
 @csrf
     <div class="mb-3">
         <label class="form-label fs-4 fst-italic">Nombre completo:</label>

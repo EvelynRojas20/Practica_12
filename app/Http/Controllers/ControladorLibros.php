@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\ValidadorB;
+use App\Http\Requests\ValidadorLibro;
 use DB;
 use Carbon\Carbon;
 
@@ -19,7 +19,7 @@ class ControladorLibros extends Controller
         return view('Registro');
     }
 
-    public function store(ValidadorB $request)
+    public function store(ValidadorLibro $request)
     {
         DB::table('tb_libros')->insert([
             "titulo"=>$request->input('titulo'),

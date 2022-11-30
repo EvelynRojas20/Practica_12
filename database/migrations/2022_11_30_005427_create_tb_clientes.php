@@ -6,16 +6,14 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+  
     public function up()
     {
-        Schema::create('tb_libros', function (Blueprint $table) {
-            $table->increments('idLibro');
-            $table->string('titulo');
-            $table->string('autor');
-            $table->string('paginas');
-            $table->string('editorial');
-            $table->string('isbn');
+        Schema::create('tb_clientes', function (Blueprint $table) {
+            $table->increments('idCliente');
+            $table->string('nombre');
             $table->string('email');
+            $table->integer('ine');
             $table->timestamps();
         });
     }
@@ -27,6 +25,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tb_libros');
+        Schema::dropIfExists('tb_clientes');
     }
 };

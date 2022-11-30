@@ -3,15 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\ValidadorB;
+use App\Http\Requests\ValidadorCliente;
 use DB;
 use Carbon\Carbon;
 
-class ContBD extends Controller
+class ControladorClientes extends Controller
 {
     public function index()
     {
-        //
+        return view('Clientes');
     }
 
     public function create()
@@ -19,57 +19,35 @@ class ContBD extends Controller
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function store(ValidadorCliente $request)
     {
-        //
+        DB::table('tb_clientes')->insert([
+            "nombre"=>$request->input('Nombre'),
+            "email"=>$request->input('ema'),
+            "ine"=>$request->input('ine'),
+            "created_at"=>Carbon::now(),
+            "updated_at"=>Carbon::now(),
+        ]);
+        return redirect('cliente/create')->with('confirmacion',"Tu recuerdo a sido guardado");
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+   
     public function edit($id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy($id)
     {
         //
