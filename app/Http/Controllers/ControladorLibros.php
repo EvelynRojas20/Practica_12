@@ -46,14 +46,24 @@ class ControladorLibros extends Controller
     }
 
   
-    public function update(Request $request, $id)
+    public function update(ValidadorLibro $request, $id)
     {
-        //
+        DB::table('tb_libros')->where('idLibro', $id)->update([
+            "titulo"=>$request->input('titulo'),
+            "autor"=>$request->input('autor'),
+            "paginas"=>$request->input('pagina'),
+            "editorial"=>$request->input('edit'),
+            "isbn"=>$request->input('txt'),
+            "email"=>$request->input('email'),
+            "updated_at"=>Carbon::now(),
+        ]);
+        return redirect('libro')->with('Actualizado',"Tu recuerdo a sido guardado");
     }
 
   
     public function destroy($id)
     {
-        //
+        DB::table('tb_libros')->where('idLibro', $id)->delete();
+        return redirect('libro')->with('Eliminado',"Tu recuerdo se elimino");
     }
 }

@@ -12,6 +12,8 @@ Route::view('/', 'Principal')->name('ing');
 Route::get('libro/create',[ControladorLibros::class,'create'])->name('libro.create');
 Route::post('libro', [ControladorLibros::class, 'store'])->name('libro.store');
 Route::get('libro',[ControladorLibros::class,'index'])->name('libro.index');
+Route::put('libro/{id}',[ControladorLibros::class,'update'])->name('libro.update');
+Route::delete('libro/{id}',[ControladorLibros::class,'destroy'])->name('libro.destroy');
 
 //CLIENTE
 Route::get('cliente/create',[ControladorClientes::class,'create'])->name('cliente.create');
