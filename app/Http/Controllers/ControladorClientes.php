@@ -11,7 +11,8 @@ class ControladorClientes extends Controller
 {
     public function index()
     {
-        return view('Clientes');
+        $tablaC = DB::table('tb_clientes')->get();
+        return view('ConsultaClientes', compact('tablaC'));
     }
 
     public function create()
@@ -42,14 +43,21 @@ class ControladorClientes extends Controller
         //
     }
 
-    public function update(Request $request, $id)
+    public function update(ValidadorCliente $request, $id)
     {
-        //
+        DB::table('tb_clientes')->where('idCliente', $id)->update([
+            "nombre"=>$request->input('Nombre'),
+            "email"=>$request->input('ema'),
+            "ine"=>$request->input('ine'),
+            "updated_at"=>Carbon::now(),
+        ]);
+        return redirect('cliente')->with('Actualiza',"Tu recuerdo a sido guardado");
     }
 
 
     public function destroy($id)
     {
-        //
+        DB::table('tb_clientes')->where('idCliente', $id)->delete();
+        return redirect('cliente')->with('Elimina',"Tu recuerdo se elimino");
     }
 }

@@ -37,7 +37,7 @@
                 <p class="font-monospace text-danger fw-bold text-start">{{ $errors->first('edit')}}</p>
                 
                 <label class="form-label fs-4 fst-italic">ISBN:</label>
-                <input type="text" name="txt" class="form-control" value="{{old('txt')}}">
+                <input type="int" name="txt" class="form-control" value="{{old('txt')}}">
                 <p class="font-monospace text-danger fw-bold text-start">{{ $errors->first('txt')}}</p>
                 
                 <label class="form-label fs-4 fst-italic">Email editorial:</label>

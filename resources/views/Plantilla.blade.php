@@ -34,6 +34,10 @@
             <li class="nav-item">
             <a class="nav-link {{ request()->routeIs('cliente.create')?'text-success fst-italic fw-bold':''}}"href="{{route('cliente.create')}}">Registro de Clientes</a>
             </li>
+
+            <li class="nav-item">
+            <a class="nav-link {{ request()->routeIs('cliente.index')?'text-info fst-italic fw-bold':''}}" href="{{route('cliente.index')}}">Consulta Clientes</a>
+            </li>
           
         </ul>
         </div>

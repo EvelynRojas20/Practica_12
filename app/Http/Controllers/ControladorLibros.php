@@ -57,13 +57,13 @@ class ControladorLibros extends Controller
             "email"=>$request->input('email'),
             "updated_at"=>Carbon::now(),
         ]);
-        return redirect('libro')->with('Actualizado',"Tu recuerdo a sido guardado");
+        return redirect('libro')->with('Actualizar',"Tu recuerdo a sido guardado");
     }
 
   
     public function destroy($id)
     {
         DB::table('tb_libros')->where('idLibro', $id)->delete();
-        return redirect('libro')->with('Eliminado',"Tu recuerdo se elimino");
+        return redirect('libro')->with('Eliminar',"Tu recuerdo se elimino");
     }
 }

@@ -26,7 +26,7 @@
     </div>
     <div class="mb-3">
         <label class="form-label fs-4 fst-italic">No. INE:</label>
-        <input type="text" name ="ine" class="form-control" value="{{old('ine')}}">
+        <input type="int" name ="ine" class="form-control" value="{{old('ine')}}">
         <p class="font-monospace text-danger fw-bold text-start">{{ $errors->first('ine')}}</p>
     </div>
  

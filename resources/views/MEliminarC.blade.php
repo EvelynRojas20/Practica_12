@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal fade" id="MEliminarLibro{{$consulta->idLibro}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="MEliminarLibro{{$consulta->idLibro}}" aria-hidden="true">
+<div class="modal fade" id="MEliminarC{{$consulta->idCliente}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="MEliminarC{{$consulta->idCliente}}" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -7,15 +7,14 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-            {{$consulta->titulo}}
-            {{$consulta->autor}}
-
+            {{$consulta->nombre}}
+            {{$consulta->email}}
       </div>
       <div class="modal-footer">
-        <form action="{{route('libro.destroy',$consulta->idLibro)}}" method="POST">
+        <form action="{{route('cliente.destroy',$consulta->idCliente)}}" method="POST">
             @csrf
             @method('delete')
-            <button herf="ConsultaLibros" type="button" class="btn btn-outline-success" data-bs-dismiss="modal">Regresar</button>
+            <button herf="ConsultaClientes" type="button" class="btn btn-outline-success" data-bs-dismiss="modal">Regresar</button>
             <button type="submit" class="btn btn-outline-danger">Eliminar</button>
         </form>
       </div>

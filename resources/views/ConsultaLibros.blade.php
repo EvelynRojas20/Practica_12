@@ -1,7 +1,7 @@
 @extends('plantilla')
 
 @section('contenido')
-  @if(session()->has('Actualizado'))
+  @if(session()->has('Actualizar'))
       
       {!!"<script>Swal.fire(
         'Correcto',
@@ -10,7 +10,7 @@
         )</script>"!!}
 
   @endif
-  @if(session()->has('Eliminado'))
+  @if(session()->has('Eliminar'))
       
       {!!"<script>Swal.fire(
         'Correcto',
@@ -52,7 +52,7 @@
         </button>
       </td>
       <td>
-        <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#EliminarLibro{{$consulta->idLibro}}">
+        <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#MEliminarLibro{{$consulta->idLibro}}">
         <i class="bi bi-trash3-fill"></i>
         </button>
       </td>

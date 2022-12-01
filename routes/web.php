@@ -18,4 +18,6 @@ Route::delete('libro/{id}',[ControladorLibros::class,'destroy'])->name('libro.de
 //CLIENTE
 Route::get('cliente/create',[ControladorClientes::class,'create'])->name('cliente.create');
 Route::post('cliente', [ControladorClientes::class, 'store'])->name('cliente.store');
-Route::get('cliente',[ControladorLibros::class,'index'])->name('cliente.index');
+Route::get('cliente',[ControladorClientes::class,'index'])->name('cliente.index');
+Route::put('cliente/{id}',[ControladorClientes::class,'update'])->name('cliente.update');
+Route::delete('cliente/{id}',[ControladorClientes::class,'destroy'])->name('cliente.destroy');
